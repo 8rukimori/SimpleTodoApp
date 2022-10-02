@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-dark" role="alert">
+    <h1>Detail</h1>
+</div>
+
+{% endblock header%}
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+    {{ object.title }}
+</div>
+
+<div class="alert alert-success" role="alert">
+    {{ object.memo }}
+</div>
+
+<!-- DetialViewを継承した場合は、objectという一つで作成されたModelであることを表せる。 -->
+
+{% endblock %}

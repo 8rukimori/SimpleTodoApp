@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-dark" role="alert">
+    <h1>Create</h1>
+</div>
+{% endblock header %}
+
+{% block content %}
+<form action="" method="POST">{%csrf_token%}
+
+{{ form.as_p }} <!-- as_p = pタグでフォームを表示する -->
+<input type="submit" value="create">
+
+</form>
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-dark" role="alert">
+    <h1>Create</h1>
+</div>
+{% endblock header %}
+
+{% block content %}
+<form action="" method="POST">{%csrf_token%}
+    <table>
+        <tr>{{ form.title }} </tr>
+        <tr>{{ form.memo }} </tr>
+        <tr>{{ form.priority }} </tr>
+        <tr>{{ form.due_date }} </tr>    
+    </table>
+<input type="submit" value="update">
+
+</form>
+{% endblock content %}

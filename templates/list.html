@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-dark" role="alert">
+    <h1>List</h1>
+</div>
+{% endblock header%}
+
+
+{% block content %}
+
+<div class="container">
+
+    <a class="btn btn-secondary mb-4" href="create" role="button">Create Todo</a>
+
+    {% for todo in object_list %} <!-- object_listはTodoList.viewsで指定したmodelの中のオブジェクトリスト。Class based viewを使えば変数定義を自分でやる必要がない。  -->
+ 
+    <div class="alert alert-{{ todo.priority }}" role="alert">
+        <h3>{{ todo.title }}</h3>
+        <p>期日:{{ todo.due_date }}</p>
+        <a href="{% url 'update' pk=todo.pk %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集画面へ</a>
+        <a href="{% url 'delete' pk=todo.pk %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">削除画面へ</a>
+        <a href="{% url 'detail' pk=todo.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">詳細画面へ</a>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

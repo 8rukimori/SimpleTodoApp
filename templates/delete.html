@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-dark" role="alert">
+    <h1>Delete</h1>
+</div>
+{% endblock header %}
+
+{% block content %}
+
+<!-- Viewsの時点で対象オブジェクトは指定済み。DeleteViewを継承したことで、特別規定する必要なし。 -->
+<form action="" method="POST">{%csrf_token%}
+<input type="submit" value="delete">
+
+</form>
+{% endblock content %}
